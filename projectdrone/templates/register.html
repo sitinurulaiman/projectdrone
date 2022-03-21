@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="main">
+    <form method="POST" action="register">
+        {% csrf_token %}
+        <center>
+            <div class="formm">
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Enter Email" required >
+                </div>
+
+                <div class="form-group">
+                    <input type="username" name="uname" placeholder="Enter Username" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" name="pwd" placeholder="Password" required>
+                </div>
+                <div class="form-group">        
+                    <input type="password" name="pwd2" placeholder=" Conform Password" required>
+                </div>
+                <button class="btnn" type="submit">Register</button>
+        
+    </form>  
+    {% for msg in messages %}
+    {{msg}}
+    {% endfor %}  
+        
+    
+        <p class="link">Already have an account<br>
+        <a href="/">Log In</a> here</a></p>
+            </div>
+        </center>
+    
+
+</div>
+
+{% endblock %}
